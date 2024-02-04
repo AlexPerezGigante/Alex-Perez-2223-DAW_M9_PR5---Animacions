@@ -1,0 +1,149 @@
+*{
+    margin: 0;
+}
+header{
+    height: 300px;
+}
+main{
+    height: 350px;
+    border: 1px solid;
+    overflow: hidden;
+
+}
+footer{
+    height: 300px;
+    background-color: #1c1c1c;
+    position: fixed;
+    width: 100%;
+    overflow: hidden;
+    
+}
+.tarjeta{
+    margin-left: 75%;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    height: 100%;
+    transition: top 0.3s ease; 
+    transform-style: preserve-3d;
+}
+.tarjeta .delante{
+    transform: rotate(20deg);
+    filter: drop-shadow(10px 10px 10px rgb(0, 0, 0, 0.5));
+    width: 400px;
+    position: absolute;
+}
+
+footer:hover .tarjeta {
+    transition: top 0.7s ease;
+    margin-top: -250px;
+    top: 0;
+}
+footer:hover{
+    overflow: visible;
+}
+.tarjeta:hover{
+    transform-style: preserve-3d;
+}
+
+.tarjeta:hover .delante {
+    transition: all 0.3s 0.3 linear;
+    transform: rotateY(180deg);
+}
+.tarjeta:hover .detras {
+    visibility: visible;
+    transition: all 0.3s 0.45s linear;
+    transform: rotateY(360deg);
+}
+.delante{
+    transform: rotateY(0deg);
+    transition: 0.3s 0.3s linear;
+    backface-visibility: hidden;
+}
+.detras{
+    transform: rotateY(270deg);
+    visibility: hidden;
+    transition: 0.3s 0.15s linear;
+    width: 200px;
+    height: 200px;
+    margin-top: 20px;
+    margin-left: 80px;
+}
+
+.coche img{
+    width: 200px;
+}
+.coche{
+    width: 200px;
+}
+.coche{
+    margin-left: 1300px;
+    margin-top: 250px;
+    animation: mueve-coche 3s linear infinite
+}
+
+@keyframes mueve-coche{
+    0%{
+        margin-left: 1300px;
+        margin-top: 250px;
+        transform: rotate(0deg);
+    }
+    10%{
+        transition: ease;
+        margin-left: 1250px;
+        margin-top: 250px;
+        transform: rotate(0deg);
+    }
+    20%{
+        transition: ease;
+        margin-left: 1200px;
+        margin-top: 150px;
+        transform: rotate(0deg);
+    }
+    30%{
+        transition: ease;
+        margin-left: 1200px;
+        margin-top: 100px; 
+        transform: rotate(0deg);
+    }
+    40%{
+        transition: ease;
+        margin-left: 900px;
+        margin-top: 100px;
+        transform: rotate(0deg);
+    }
+    50%{
+        transition: ease;
+        margin-left: 900px;
+        margin-top: 250px;
+        transform: rotate(0deg);
+    }
+    60%{
+        transition: ease;
+        margin-left: 200px;
+        margin-top: 250px;
+        transform: rotate(0deg);
+    }
+    70%{
+        transition: ease;
+        transform: rotate(10deg);
+        margin-left: 0px;
+        margin-top: 200px;
+        
+    }
+    80%{
+        transition: linear;
+        margin-left: 500px;
+        margin-top: 50px;
+        transform: rotate(360deg);
+    }
+    90%{
+        transition: linear;
+        margin-left: 1000px;
+        margin-top: 100px;
+        transform: rotate(720deg);
+    }
+    100%{
+        transform: rotate(1080deg);
+    }
+}
